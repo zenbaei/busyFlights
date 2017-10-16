@@ -1,0 +1,19 @@
+logging:
+  level:
+    com.travix.medusa: debug
+
+server:
+  port: 8080
+  contextPath: /busyFlights
+  
+management:
+  security:
+    enabled: false
+
+supplier:
+  endpoint:
+    search:
+      fakeApi: true
+      crazyAir: http://my-json-server.typicode.com/zenbaei/fakeApi/crazyAir
+      toughJet: http://my-json-server.typicode.com/zenbaei/fakeApi/toughJet
+      

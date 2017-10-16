@@ -1,5 +1,44 @@
 **Travix - Problem to be solved**
 
+You can test the application from cmd (given mvn is visible on path) after steping into project folder run:
+  mvn spring-boot:run
+
+Run unit test:
+  mvn test
+
+Application context path:
+ /busyFlights
+
+Rest API path:
+  /api/v1
+
+Flight search API path:
+  /flights/search
+
+Sample request that is exptected to return a result of 4 flights:
+http://localhost:8080/busyFlights/api/v1/flights/search?origin=LHR&destination=AMS&departureDate=2017-02-01&returnDate=2017-02-10&numberOfPassengers=1
+
+* I have provided a fake API for crazyAir and toughJet, both url are defined in src/main/resources/application.yml
+If you need to replace the fake APIs with real ones, then replace the defined values within application.yml and set fakeApi to false, ex;
+
+supplier:
+  endpoint:
+    search:
+      fakeApi: false
+      crazyAir: http://crazyAir/api/search
+      toughJet: http://toughJet/api/search
+
+Browse API documentation on:
+  http://localhost:8080/busyFlights/swagger-ui.html#
+
+Sample from application health services:
+  http://localhost:8080/busyFlights/health
+
+* Further additions would be:
+- Adding custom error messages and codes for our API.
+- Externalize application configuration in order to be able to change it without the need to unwrap the jar.
+
+
 **Background:**
 
 BusyFlights is a flights search solution which aggregates flight results initially from 2 different suppliers (CrazyAir and ToughJet). A future iteration (not part of the test) may add more suppliers.
