@@ -1,9 +1,9 @@
 **Travix - Problem to be solved**
 
-You can test the application from cmd (given mvn is visible on path) after steping into project folder run:
+You can test the application from cmd after cloning it and steping into project folder with:
   mvn spring-boot:run
 
-Run unit test:
+Run unit test with:
   mvn test
 
 Application context path:
@@ -18,8 +18,13 @@ Flight search API path:
 Sample request that is exptected to return a result of 4 flights:
 http://localhost:8080/busyFlights/api/v1/flights/search?origin=LHR&destination=AMS&departureDate=2017-02-01&returnDate=2017-02-10&numberOfPassengers=1
 
-* I have provided a fake API for crazyAir and toughJet, both url are defined in src/main/resources/application.yml
-If you need to replace the fake APIs with real ones, then replace the defined values within application.yml and set fakeApi to false, ex;
+* I have provided a fake API for crazyAir and toughJet, that will be consumed by our service.
+
+The fake API responds with json array having the same attributes expected from the real service, you can check them on:
+ http://my-json-server.typicode.com/zenbaei/fakeApi/crazyAir
+ http://my-json-server.typicode.com/zenbaei/fakeApi/toughJet 
+
+If you want to replace the fake APIs with real ones, then replace the defined values within src/main/resources/application.yml and set fakeApi to false, ex;
 
 supplier:
   endpoint:
